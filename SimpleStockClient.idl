@@ -1,0 +1,20 @@
+#ifndef __inco_niocs_test_stockclient_idl__
+#define __inco_niocs_test_stockclient_idl__
+
+#include <com/sun/star/lang/IllegalArgumentException.idl>
+#include <com/sun/star/sheet/XSpreadsheet.idl>
+
+module inco { module niocs { module test {
+
+    interface XStockClient
+    {
+        void setEnableUpdates( [in] boolean bSet );
+        void setSheet( [in] ::com::sun::star::sheet::XSpreadsheet rxSheet );
+    };
+
+    singleton theStockClient : XStockClient;
+    service StockClient : XStockClient;
+	
+}; }; };
+
+#endif
